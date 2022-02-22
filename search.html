@@ -244,7 +244,34 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><!-- End Language Selector -->
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">English</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/storagegrid-116//search.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/storagegrid-116//search.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/storagegrid-116//search.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/storagegrid-116//search.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
   </div>
@@ -284,7 +311,7 @@
 <div class="ie-main">
   <!-- Sidebar Column -->
   
-  <div class="col-md-3" >
+  <div class="col-md-3" id="sidebar-height">
       <div class="n-pdf-header">
   <a id="toggleButtonPdf" class="n-pdf-button" type="button">
     <img src="/us-en/storagegrid-116/images/pdf.png" width="16" height="16"/>Available PDFs<span>
@@ -322,16 +349,23 @@
     });
 </script></div>
 </div>
-<div class="sidebar-nav-container">
-  <ul id="mysidebar" class="nav"></ul>
-</div>
 <script>
   $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
   $("#toggleButtonPdf").click(function () {
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
   </div>
@@ -407,7 +441,7 @@
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2021 NetApp, Inc.</a>
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
 
 </ul>
