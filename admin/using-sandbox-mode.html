@@ -45,12 +45,52 @@
   <link rel="stylesheet" href='/us-en/storagegrid-116/css/na-utility.css' type='text/css'>
   <link rel="stylesheet" href='/us-en/storagegrid-116/css/na-sidebar.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/storagegrid-116/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/storagegrid-116/css/custom-dropdown.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/storagegrid-116/css/na-pagenav.css' type='text/css'>
 
   
   <link rel="stylesheet" href="/us-en/storagegrid-116/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/storagegrid-116/css/tabbed-blocks.css" type="text/css">
-  <link rel='stylesheet' href='/us-en/storagegrid-116/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/us-en/storagegrid-116/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
   <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
@@ -60,15 +100,6 @@
 
   <script src='/us-en/storagegrid-116/js/na-utility.js'></script>
   <script src='/us-en/storagegrid-116/js/clouddocs.js'></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    var head = document.getElementsByTagName('head')[0];
-    var adobe = document.createElement("script");
-    adobe.type = "text/javascript";
-    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
-    head.appendChild(adobe);
-  }
-  </script>
   <script src='/us-en/storagegrid-116/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/us-en/storagegrid-116/js/toc.js'></script>
@@ -121,16 +152,8 @@
               $("#tg-sb-icon").toggleClass('fa-toggle-off');
           });
       });
-  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-81697994-3');
-  }
   </script>
-  <script src='/us-en/storagegrid-116/js/version-dropdown.js'></script>
+  <script src='/us-en/storagegrid-116/js/custom-dropdown.js'></script>
   <script src='/us-en/storagegrid-116/js/FileSaver.min.js'></script>
   <script src='/us-en/storagegrid-116/js/jszip-utils.min.js'></script>
   <script src='/us-en/storagegrid-116/js/jszip.min.js'></script>
@@ -138,20 +161,15 @@
 </head>
 
 
-  <body class role="document">
+  <body class role="document" data-flavor="">
     <div id="page" class="n-off-canvas-menu">
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
   
   <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/storagegrid-116/issues/new?body=Page%3A%20[Use sandbox mode](https://docs.netapp.com/us-en/storagegrid-116/admin/using-sandbox-mode.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/storagegrid-116/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/storagegrid-116/blob/main/admin/using-sandbox-mode.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/storagegrid-116/images/edit-sm.svg" class="github-icon" />Edit this page</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/storagegrid-116/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
-    </div>
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/storagegrid-116/issues/new?body=Page%3A%20[Use sandbox mode](https://docs.netapp.com/us-en/storagegrid-116/admin/using-sandbox-mode.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/storagegrid-116/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/storagegrid-116/blob/main/admin/using-sandbox-mode.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/storagegrid-116/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/storagegrid-116/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -161,6 +179,7 @@
       </nav>
     </div>
   </div>
+  
   
   <!-- Start top_hat -->
   <div class="n-top-hat">
@@ -244,7 +263,8 @@
           data-did-you-mean="Search for {suggestion}." 
           data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" 
           data-results-found="{hitCount} results found"  
-          data-sk-es-pf-indexes=""></div>
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
@@ -276,9 +296,11 @@
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/storagegrid-116/admin/using-sandbox-mode.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/storagegrid-116/admin/using-sandbox-mode.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/zh-cn/storagegrid-116/admin/using-sandbox-mode.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/storagegrid-116/admin/using-sandbox-mode.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                  <a href="https://docs.netapp.com/zh-tw/storagegrid-116/admin/using-sandbox-mode.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -333,6 +355,9 @@
 </div>
 <div class="n-pdf-body-container">
   <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
         <a target="_blank" href="/us-en/storagegrid-116/pdfs/fullsite-sidebar/StorageGRID_11_6_Documentation.pdf" >
           <img src="/us-en/storagegrid-116/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
 
@@ -343,6 +368,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Get_started.pdf" 
@@ -356,6 +384,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Grid_primer.pdf" 
@@ -375,6 +406,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Object_management.pdf" 
@@ -390,6 +424,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Object_lifecycle.pdf" 
@@ -431,6 +468,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/How_to_use_StorageGRID.pdf" 
@@ -460,6 +500,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Monitor_operations.pdf" 
@@ -514,6 +557,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Networking_guidelines.pdf" 
@@ -531,6 +577,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Network_topology_examples.pdf" 
@@ -565,6 +614,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Deployment_specific_networking_considerations.pdf" 
@@ -597,6 +649,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Network_port_reference.pdf" 
@@ -641,6 +696,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Install_and_maintain_appliance_hardware.pdf" 
@@ -654,6 +712,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/SG100_and_SG1000_services_appliances.pdf" 
@@ -673,6 +734,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Prepare_for_installation__SG100_and_SG1000_.pdf" 
@@ -692,6 +756,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Review_appliance_network_connections__SG100_and_SG1000_.pdf" 
@@ -705,6 +772,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Port_bond_modes_for_SG100_and_SG1000_appliances.pdf" 
@@ -751,6 +821,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Install_hardware__SG100_and_SG1000_.pdf" 
@@ -783,6 +856,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_StorageGRID_connections__SG100_and_SG1000_.pdf" 
@@ -817,6 +893,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_BMC_interface__SG100_and_SG1000_.pdf" 
@@ -851,6 +930,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Deploy_services_appliance_node.pdf" 
@@ -870,6 +952,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Automate_appliance_installation_and_configuration__SG100_and_SG1000_.pdf" 
@@ -909,6 +994,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Troubleshoot_hardware_installation__SG100_and_SG1000_.pdf" 
@@ -941,6 +1029,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Maintain_appliance.pdf" 
@@ -998,6 +1089,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/SG6000_storage_appliances.pdf" 
@@ -1011,6 +1105,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/StorageGRID_SG6000_storage_appliances.pdf" 
@@ -1041,6 +1138,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Prepare_for_installation__SG6000_.pdf" 
@@ -1060,6 +1160,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Review_appliance_network_connections__SG6000_.pdf" 
@@ -1073,6 +1176,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Port_bond_modes_for_SG6000_CN_controller.pdf" 
@@ -1119,6 +1225,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Install_hardware__SG6000_.pdf" 
@@ -1161,6 +1270,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_hardware__SG6000_.pdf" 
@@ -1174,6 +1286,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_StorageGRID_connections__SG6000_.pdf" 
@@ -1208,6 +1323,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Access_and_Configure_SANtricity_System_Manager__SG6000_.pdf" 
@@ -1236,6 +1354,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_BMC_interface__SG6000_.pdf" 
@@ -1287,6 +1408,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Automate_appliance_installation_and_configuration__SG6000_.pdf" 
@@ -1317,6 +1441,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Troubleshoot_hardware_installation__SG6000_.pdf" 
@@ -1336,6 +1463,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Troubleshoot_connection_issues__SG6000_.pdf" 
@@ -1373,6 +1503,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Maintain_SG6000_appliance.pdf" 
@@ -1388,6 +1521,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Upgrade_SANtricity_OS_on_storage_controllers.pdf" 
@@ -1444,6 +1580,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Replace_Fibre_Channel_HBA_in_SG6000_CN_controller.pdf" 
@@ -1500,6 +1639,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/SG5700_storage_appliances.pdf" 
@@ -1513,6 +1655,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/StorageGRID_SG5700_storage_appliances.pdf" 
@@ -1539,6 +1684,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Prepare_for_installation__SG5700_.pdf" 
@@ -1558,6 +1706,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Review_appliance_network_connections__SG5700_.pdf" 
@@ -1571,6 +1722,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Port_bond_modes_for_E5700SG_controller_ports.pdf" 
@@ -1617,6 +1771,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Install_hardware__SG5700_.pdf" 
@@ -1638,6 +1795,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/View_SG5700_boot_up_status_codes.pdf" 
@@ -1671,6 +1831,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_hardware__SG5700_.pdf" 
@@ -1684,6 +1847,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_StorageGRID_connections__SG5700_.pdf" 
@@ -1718,6 +1884,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Access_and_configure_SANtricity_System_Manager__SG5700_.pdf" 
@@ -1765,6 +1934,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Automate_appliance_installation_and_configuration__SG5700_.pdf" 
@@ -1795,6 +1967,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Troubleshoot_hardware_installation__SG5700_.pdf" 
@@ -1808,6 +1983,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Hardware_setup_appears_to_hang__SG5700_.pdf" 
@@ -1845,6 +2023,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Maintain_SG5700_appliance.pdf" 
@@ -1860,6 +2041,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Upgrade_SANtricity_OS_on_storage_controller.pdf" 
@@ -1900,6 +2084,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Monitor_node_encryption_in_maintenance_mode__SG5700_.pdf" 
@@ -1942,6 +2129,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/SG5600_storage_appliances.pdf" 
@@ -1955,6 +2145,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/StorageGRID_SG5600_storage_appliances.pdf" 
@@ -1983,6 +2176,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Prepare_for_installation__SG5600_.pdf" 
@@ -2004,6 +2200,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Review_appliance_network_connections__SG5600_.pdf" 
@@ -2017,6 +2216,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Port_bond_modes_for_E5600SG_controller_ports.pdf" 
@@ -2063,6 +2265,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Install_hardware__SG5600_.pdf" 
@@ -2086,6 +2291,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/View_boot_up_status_and_review_error_codes_on_SG5600_controllers.pdf" 
@@ -2119,6 +2327,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_hardware__SG5600_.pdf" 
@@ -2132,6 +2343,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_StorageGRID_connections__SG5600_.pdf" 
@@ -2166,6 +2380,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_SANtricity_Storage_Manager.pdf" 
@@ -2183,6 +2400,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Set_up_SANtricity_Storage_Manager.pdf" 
@@ -2241,6 +2461,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Automate_appliance_installation_and_configuration__SG5600_.pdf" 
@@ -2271,6 +2494,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Troubleshoot_hardware_installation__SG5600_.pdf" 
@@ -2284,6 +2510,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Hardware_setup_appears_to_hang__SG5600_.pdf" 
@@ -2321,6 +2550,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Maintain_SG5600_appliance.pdf" 
@@ -2354,6 +2586,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Monitor_node_encryption_in_maintenance_mode__SG5600_.pdf" 
@@ -2405,6 +2640,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Install_and_upgrade_software.pdf" 
@@ -2418,6 +2656,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Upgrade_StorageGRID_software.pdf" 
@@ -2441,6 +2682,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Plan_and_prepare_for_upgrade.pdf" 
@@ -2475,6 +2719,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Upgrade_StorageGRID_software.pdf" 
@@ -2503,6 +2750,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Troubleshoot_upgrade_issues.pdf" 
@@ -2542,6 +2792,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Install_Red_Hat_Enterprise_Linux_or_CentOS.pdf" 
@@ -2557,6 +2810,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Plan_and_prepare_for_Red_Hat_or_CentOS_installation.pdf" 
@@ -2584,6 +2840,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Prepare_the_hosts__Red_Hat_or_CentOS_.pdf" 
@@ -2625,6 +2884,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Deploy_virtual_grid_nodes__Red_Hat_or_CentOS_.pdf" 
@@ -2657,6 +2919,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_the_grid_and_complete_installation__Red_Hat_or_CentOS_.pdf" 
@@ -2718,6 +2983,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Install_Ubuntu_or_Debian.pdf" 
@@ -2733,6 +3001,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Plan_and_prepare_for_Ubuntu_or_Debian_installation.pdf" 
@@ -2760,6 +3031,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Prepare_the_hosts__Ubuntu_or_Debian_.pdf" 
@@ -2805,6 +3079,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Deploy_virtual_grid_nodes__Ubuntu_or_Debian_.pdf" 
@@ -2837,6 +3114,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_grid_and_complete_installation__Ubuntu_or_Debian_.pdf" 
@@ -2898,6 +3178,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Install_VMware.pdf" 
@@ -2913,6 +3196,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Plan_and_prepare_for_VMware_installation.pdf" 
@@ -2947,6 +3233,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Deploy_virtual_machine_grid_nodes__VMware_.pdf" 
@@ -2975,6 +3264,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_the_grid_and_complete_installation__VMware_.pdf" 
@@ -3043,6 +3335,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Perform_system_administration.pdf" 
@@ -3056,6 +3351,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Administer_StorageGRID.pdf" 
@@ -3071,6 +3369,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Get_started_with_StorageGRID.pdf" 
@@ -3098,6 +3399,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_the_API.pdf" 
@@ -3119,6 +3423,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_the_API_if_single_sign_on_is_enabled.pdf" 
@@ -3165,6 +3472,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Control_access_to_StorageGRID.pdf" 
@@ -3192,6 +3502,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_single_sign_on__SSO_.pdf" 
@@ -3250,6 +3563,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_security_settings.pdf" 
@@ -3263,6 +3579,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_certificates.pdf" 
@@ -3278,6 +3597,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_server_certificates.pdf" 
@@ -3321,6 +3643,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_key_management_servers.pdf" 
@@ -3365,6 +3690,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_proxy_settings.pdf" 
@@ -3391,6 +3719,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_untrusted_Client_Networks.pdf" 
@@ -3426,6 +3757,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_tenants.pdf" 
@@ -3449,6 +3783,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_platform_services.pdf" 
@@ -3490,6 +3827,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_S3_and_Swift_client_connections.pdf" 
@@ -3509,6 +3849,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_high_availability_groups.pdf" 
@@ -3539,6 +3882,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_load_balancing.pdf" 
@@ -3584,6 +3930,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_networks_and_connections.pdf" 
@@ -3605,6 +3954,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_traffic_classification_policies.pdf" 
@@ -3637,6 +3989,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_link_costs.pdf" 
@@ -3672,6 +4027,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_AutoSupport.pdf" 
@@ -3704,6 +4062,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_Storage_Nodes.pdf" 
@@ -3721,6 +4082,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_Storage_options.pdf" 
@@ -3749,6 +4113,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_global_settings_for_stored_objects.pdf" 
@@ -3790,6 +4157,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_Admin_Nodes.pdf" 
@@ -3815,6 +4185,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_audit_client_access.pdf" 
@@ -3828,6 +4201,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_audit_clients_for_CIFS.pdf" 
@@ -3862,6 +4238,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_the_audit_client_for_NFS.pdf" 
@@ -3910,6 +4289,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_Archive_Nodes.pdf" 
@@ -3925,6 +4307,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Archive_to_the_cloud_through_S3_API.pdf" 
@@ -3957,6 +4342,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Archive_to_tape_through_TSM_middleware.pdf" 
@@ -3993,6 +4381,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Integrate_Tivoli_Storage_Manager.pdf" 
@@ -4010,6 +4401,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Complete_Archive_Node_setup.pdf" 
@@ -4025,6 +4419,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_TSM_server.pdf" 
@@ -4080,6 +4477,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Migrate_data_into_StorageGRID.pdf" 
@@ -4119,6 +4519,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_objects_with_ILM.pdf" 
@@ -4134,6 +4537,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/ILM_and_object_lifecycle.pdf" 
@@ -4149,6 +4555,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/How_objects_are_ingested.pdf" 
@@ -4175,6 +4584,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/How_objects_are_stored__replication_or_erasure_coding_.pdf" 
@@ -4224,6 +4636,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Create_storage_grades__storage_pools__EC_profiles__and_regions.pdf" 
@@ -4239,6 +4654,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_storage_pools.pdf" 
@@ -4277,6 +4695,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_Cloud_Storage_Pools.pdf" 
@@ -4300,6 +4721,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Create_Cloud_Storage_Pool.pdf" 
@@ -4343,6 +4767,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_Erasure_Coding_profiles.pdf" 
@@ -4382,6 +4809,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Create_ILM_rule.pdf" 
@@ -4397,6 +4827,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Step_1_of_3__Define_basics.pdf" 
@@ -4421,6 +4854,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Step_2_of_3__Define_placements.pdf" 
@@ -4458,6 +4894,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Create_ILM_policy.pdf" 
@@ -4494,6 +4933,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_S3_Object_Lock_with_ILM.pdf" 
@@ -4526,6 +4968,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Example_ILM_rules_and_policies.pdf" 
@@ -4571,6 +5016,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/System_hardening.pdf" 
@@ -4605,6 +5053,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_FabricPool.pdf" 
@@ -4620,6 +5071,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Attach_StorageGRID_as_a_cloud_tier.pdf" 
@@ -4682,6 +5136,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_StorageGRID.pdf" 
@@ -4695,6 +5152,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_a_tenant_account.pdf" 
@@ -4710,6 +5170,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/How_to_sign_in_and_sign_out.pdf" 
@@ -4738,6 +5201,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Tenant_Management_API.pdf" 
@@ -4766,6 +5232,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_system_access.pdf" 
@@ -4781,6 +5250,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_groups.pdf" 
@@ -4828,6 +5300,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_S3_tenant_accounts.pdf" 
@@ -4841,6 +5316,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_S3_access_keys.pdf" 
@@ -4875,6 +5353,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_S3_buckets.pdf" 
@@ -4924,6 +5405,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_S3_platform_services.pdf" 
@@ -4937,6 +5421,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/What_are_platform_services_.pdf" 
@@ -4967,6 +5454,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_platform_services_endpoints.pdf" 
@@ -5005,6 +5495,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_search_integration_service.pdf" 
@@ -5053,6 +5546,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_S3.pdf" 
@@ -5066,6 +5562,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_S3_with_StorageGRID.pdf" 
@@ -5096,6 +5595,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/How_StorageGRID_implements_S3_REST_API.pdf" 
@@ -5128,6 +5630,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/S3_REST_API_supported_operations_and_limitations.pdf" 
@@ -5145,6 +5650,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Operations_on_buckets.pdf" 
@@ -5173,6 +5681,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Operations_on_objects.pdf" 
@@ -5213,6 +5724,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Operations_for_multipart_uploads.pdf" 
@@ -5256,6 +5770,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/StorageGRID_S3_REST_API_operations.pdf" 
@@ -5285,6 +5802,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Deprecated_bucket_requests_for_legacy_Compliance.pdf" 
@@ -5326,6 +5846,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Monitor_and_audit_operations.pdf" 
@@ -5341,6 +5864,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Access_and_review_audit_logs.pdf" 
@@ -5374,6 +5900,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Benefits_of_active__idle__and_concurrent_HTTP_connections.pdf" 
@@ -5413,6 +5942,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_Swift.pdf" 
@@ -5426,6 +5958,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_Swift_with_StorageGRID.pdf" 
@@ -5456,6 +5991,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Swift_REST_API_supported_operations.pdf" 
@@ -5514,6 +6052,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Monitor_and_maintain_StorageGRID.pdf" 
@@ -5527,6 +6068,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Monitor_and_troubleshoot.pdf" 
@@ -5544,6 +6088,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/View_the_Nodes_page.pdf" 
@@ -5586,6 +6133,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Information_you_should_monitor_regularly.pdf" 
@@ -5599,6 +6149,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Monitor_system_health.pdf" 
@@ -5656,6 +6209,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_alerts_and_alarms.pdf" 
@@ -5673,6 +6229,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_alerts.pdf" 
@@ -5698,6 +6257,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Manage_alert_notifications.pdf" 
@@ -5748,6 +6310,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_an_external_syslog_server.pdf" 
@@ -5774,6 +6339,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_SNMP_monitoring.pdf" 
@@ -5800,6 +6368,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Collect_additional_StorageGRID_data.pdf" 
@@ -5846,6 +6417,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Troubleshoot_a_StorageGRID_system.pdf" 
@@ -5861,6 +6435,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Troubleshoot_object_and_storage_issues.pdf" 
@@ -5880,6 +6457,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Troubleshoot_lost_and_missing_object_data.pdf" 
@@ -5948,6 +6528,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Alarms_reference__legacy_system_.pdf" 
@@ -5972,6 +6555,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Log_files_reference.pdf" 
@@ -6011,6 +6597,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Expand_your_grid.pdf" 
@@ -6026,6 +6615,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Plan_StorageGRID_expansion.pdf" 
@@ -6039,6 +6631,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Add_storage_capacity.pdf" 
@@ -6086,6 +6681,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Add_storage_volumes.pdf" 
@@ -6114,6 +6712,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Add_grid_nodes_or_site.pdf" 
@@ -6144,6 +6745,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_expanded_system.pdf" 
@@ -6189,6 +6793,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Recover_and_maintain.pdf" 
@@ -6202,6 +6809,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Recover_and_maintain_StorageGRID.pdf" 
@@ -6226,6 +6836,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/StorageGRID_hotfix_procedure.pdf" 
@@ -6262,6 +6875,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Grid_node_recovery_procedures.pdf" 
@@ -6281,6 +6897,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Recover_from_Storage_Node_failures.pdf" 
@@ -6296,6 +6915,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Recover_appliance_Storage_Node.pdf" 
@@ -6332,6 +6954,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Recover_from_storage_volume_failure_where_system_drive_is_intact.pdf" 
@@ -6364,6 +6989,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Recover_from_system_drive_failure.pdf" 
@@ -6407,6 +7035,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Recover_from_Admin_Node_failures.pdf" 
@@ -6420,6 +7051,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Recover_from_primary_Admin_Node_failures.pdf" 
@@ -6456,6 +7090,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Recover_from_non_primary_Admin_Node_failures.pdf" 
@@ -6501,6 +7138,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Recover_from_Gateway_Node_failures.pdf" 
@@ -6527,6 +7167,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Recover_from_Archive_Node_failures.pdf" 
@@ -6557,6 +7200,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/All_grid_node_types__Replace_Linux_node.pdf" 
@@ -6572,6 +7218,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Restore_grid_nodes_to_the_host.pdf" 
@@ -6585,6 +7234,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Restore_and_validate_grid_nodes.pdf" 
@@ -6635,6 +7287,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Replace_failed_node_with_services_appliance.pdf" 
@@ -6676,6 +7331,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Decommission_procedure.pdf" 
@@ -6689,6 +7347,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Grid_node_decommission.pdf" 
@@ -6702,6 +7363,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Prepare_to_decommission_grid_nodes.pdf" 
@@ -6715,6 +7379,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Considerations_for_grid_node_decommission.pdf" 
@@ -6730,6 +7397,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Considerations_for_Storage_Node_decommission.pdf" 
@@ -6803,6 +7473,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Site_decommission.pdf" 
@@ -6850,6 +7523,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Network_maintenance_procedures.pdf" 
@@ -6865,6 +7541,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_IP_addresses.pdf" 
@@ -6895,6 +7574,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Add_interfaces_to_existing_node.pdf" 
@@ -6923,6 +7605,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Configure_DNS_servers.pdf" 
@@ -6960,6 +7645,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Host_level_and_middleware_procedures.pdf" 
@@ -6973,6 +7661,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Linux__Migrate_grid_node_to_new_host.pdf" 
@@ -7014,6 +7705,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Grid_node_procedures.pdf" 
@@ -7051,6 +7745,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Reboot_grid_node.pdf" 
@@ -7081,6 +7778,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Power_off_and_on_all_nodes_in_grid.pdf" 
@@ -7107,6 +7807,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Use_a_DoNotStart_file.pdf" 
@@ -7133,6 +7836,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Troubleshoot_Server_Manager.pdf" 
@@ -7168,6 +7874,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Appliance_node_cloning.pdf" 
@@ -7205,6 +7914,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Review_audit_logs.pdf" 
@@ -7218,6 +7930,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Review_StorageGRID_audit_logs.pdf" 
@@ -7246,6 +7961,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Audit_log_file_and_message_formats.pdf" 
@@ -7259,6 +7977,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Audit_log_file_format.pdf" 
@@ -7285,6 +8006,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Audit_message_format.pdf" 
@@ -7324,6 +8048,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Audit_messages_and_the_object_lifecycle.pdf" 
@@ -7337,6 +8064,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Object_ingest_transactions.pdf" 
@@ -7361,6 +8091,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Object_delete_transactions.pdf" 
@@ -7385,6 +8118,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Object_retrieve_transactions.pdf" 
@@ -7411,6 +8147,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Metadata_update_messages.pdf" 
@@ -7444,6 +8183,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Audit_messages.pdf" 
@@ -7457,6 +8199,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Audit_message_categories.pdf" 
@@ -7489,6 +8234,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/storagegrid-116/pdfs/sidebar/Audit_message_reference.pdf" 
@@ -10394,6 +11142,7 @@
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
+
   </div>
   
 
@@ -10428,12 +11177,12 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-18 19:34:05 +0000">03/18/2022</time>
+    <time datetime="2022-02-02 20:39:59 +0000">02/02/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" href="https://github.com/netapp-madkat">
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-madkat">
     <img  class="avatar avatar-small"
           alt="netapp-madkat"
           width="20" height="20"
@@ -10441,7 +11190,7 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/netapp-perveilerk">
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-perveilerk">
     <img  class="avatar avatar-small"
           alt="netapp-perveilerk"
           width="20" height="20"
@@ -11152,98 +11901,122 @@ If you are using the Azure Portal and you access StorageGRID from the same compu
   <div class="n-footer__bottom">
     <div class="n-container">
       <div class="n-footer__bottom-left">
-
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
-
-</ul>
-</div>
-<div class="n-footer__social-links">
-<ul class="n-footer__social-link-list">
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
-<span class="n-footer__social-link-text">blog</span>
-<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
-  <title>blog@</title>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#blog"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
-<span class="n-footer__social-link-text">community</span>
-<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
-<title>community@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#comments"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
-<span class="n-footer__social-link-text">twitter</span>
-<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
-<title>twitter@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#twitter"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
-<span class="n-footer__social-link-text">facebook</span>
-<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
-<title>facebook@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#facebook"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
-<span class="n-footer__social-link-text">linkedin</span>
-<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
-<title>linkedin@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#linkedin"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
-<span class="n-footer__social-link-text">youtube</span>
-<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
-<title>youtube@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#youtube"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
-<span class="n-footer__social-link-text">slideshare</span>
-<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
-<title>slideshare@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#slideshare"></use>
-</svg>
-
-</a>
-</li>
-</ul>
-</div>
-
-</div>
-<div class="n-footer__bottom-right">
-  <p class="n-footer__fine-print">Have feedback for our website?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">Let us know</a>
-  <a href="https://docs.netapp.com/us-en/announcements/" class="n-footer__copyright">Announcements</a>
-  </p>
-</div>
-</div>
-</div>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Terms of Use</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">Have feedback for our website?</span>
+              <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/us-en/announcements/">Announcements</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
       </div><!-- Elasticsearch JS -->
