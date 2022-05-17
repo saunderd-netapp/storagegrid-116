@@ -5277,6 +5277,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -8710,9 +8712,9 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/registering-hardware.html">
         Register hardware
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/sg6060-installing-60-drive-shelves-into-cabinet-or-rack.html">
-        SG6060: Install 60-drive shelves into cabinet or rack
+        SG6060 and SG6060X: Install 60-drive shelves into cabinet or rack
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/sg6060-installing-drives.html">
-        SG6060: Install drives
+        SG6060 and SG6060X: Install drives
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/sgf6024-installing-24-drive-shelves-into-cabinet-or-rack.html">
         SGF6024: Install 24-drive shelves into cabinet or rack
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/sg6000-cn-installing-into-cabinet-or-rack.html">
@@ -8720,13 +8722,13 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/cabling-appliance-sg6000.html">
         Cable appliance (SG6000)
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/sg6060-cabling-optional-expansion-shelves.html">
-        SG6060: Cable optional expansion shelves
+        SG6060 and SG6060X: Cable optional expansion shelves
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/connecting-power-cords-and-applying-power-sg6000.html">
         Connect power cords and apply power (SG6000)
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/viewing-status-indicators-and-buttons-on-sg6000-cn-controller.html">
         View status indicators and buttons on SG6000-CN controller
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/viewing-boot-up-status-codes-for-sg6000-storage-controllers.html">
-        View boot-up status codes for SG6000 storage controllers
+        View boot-up status codes for SG6000 and SG6060X storage controllers
       </a></li></ul></li><li class="subfolders "><a href="/us-en/storagegrid-116/sg6000/configuring-hardware.html">
         <div class="na-navbar-padding"> Configure hardware (SG6000)</div>
       </a>
@@ -10067,13 +10069,15 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/tenant/using-identity-federation.html">
         Use identity federation
-      </a></li><li class="subfolders "><a href="/us-en/storagegrid-116/tenant/managing-groups.html">
+      </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Manage groups</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/tenant/creating-groups-for-s3-tenant.html">
         Create groups for S3 tenant
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/tenant/creating-groups-for-swift-tenant.html">
         Create groups for Swift tenant
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/tenant/tenant-management-permissions.html">
+        Tenant management permissions
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/tenant/viewing-and-editing-group-details.html">
         View and edit group details
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/tenant/adding-users-to-local-group.html">
@@ -11177,7 +11181,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-12-22 23:53:49 +0000">12/22/2021</time>
+    <time datetime="2022-05-03 13:58:13 +0000">05/03/2022</time>
     
   
 
@@ -11209,7 +11213,7 @@
 <p>Client certificates allow authorized external clients to access the StorageGRID Prometheus database, providing a secure way for external tools to monitor StorageGRID.</p>
 </div>
 <div class="paragraph">
-<p>If you need to access StorageGRID using an external monitoring tool, you must upload or generate an administrator client certificate using the Grid Manager and copy the certificate information to the external tool.</p>
+<p>If you need to access StorageGRID using an external monitoring tool, you must upload or generate a client certificate using the Grid Manager and copy the certificate information to the external tool.</p>
 </div>
 <div class="paragraph">
 <p>See the information about <a href="using-storagegrid-security-certificates.html">general security certificate use</a> and <a href="configuring-custom-server-certificate-for-grid-manager-tenant-manager.html">configuring custom server certificates</a>.</p>
@@ -11255,10 +11259,13 @@ If you are using a key management server (KMS) to protect the data on specially 
 <p>You have the IP address or domain name of the Admin Node.</p>
 </li>
 <li>
-<p>You have configured the StorageGRID management interface certificate and have the corresponding optional CA bundle.</p>
+<p>If you have configured the StorageGRID management interface certificate, you have the CA, client certificate, and private key used to configure the management interface certificate.</p>
 </li>
 <li>
-<p>To upload your own certificate, the public key and private key for the certificate are available on your local computer.</p>
+<p>To upload your own certificate, the private key for the certificate is available on your local computer.</p>
+</li>
+<li>
+<p>The private key must have been saved or recorded at the time it was created. If you do not have the original private key, you must create a new one.</p>
 </li>
 </ul>
 </div>
@@ -11271,7 +11278,7 @@ If you are using a key management server (KMS) to protect the data on specially 
 <p>You have the IP address or domain name of the Admin Node.</p>
 </li>
 <li>
-<p>To upload a new certificate and private key, the public key and private key for the certificate are available on your local computer.</p>
+<p>To upload your own certificate or a new certificate, the private key, client certificate, and CA (if used) are available on your local computer.</p>
 </li>
 </ul>
 </div>
@@ -11284,7 +11291,25 @@ If you are using a key management server (KMS) to protect the data on specially 
 <h2 id="add-client-certificates">Add client certificates</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To add an administrator client certificate, you can provide your own certificate or generate one using the Grid Manager.</p>
+<p>Follow the procedure for your scenario to add a client certificate:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#management-interface-certificate-already-configured">Management interface certificate already configured</a></p>
+</li>
+<li>
+<p><a href="#ca-issued-client-certificate">CA issued client certificate</a></p>
+</li>
+<li>
+<p><a href="#generated-certificate-from-grid-manager">Generated certificate from Grid Manager</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="management-interface-certificate-already-configured">Management interface certificate already configured</h3>
+<div class="paragraph">
+<p>Use this procedure to add a client certificate if a management interface certificate is already configured using a customer-supplied CA, client certificate, and private key.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -11296,41 +11321,24 @@ If you are using a key management server (KMS) to protect the data on specially 
 <p>Select <strong>Add</strong>.</p>
 </li>
 <li>
-<p>Enter a certificate name between 1 and 32 characters.</p>
+<p>Enter a certificate name that contains at least 1 and no more than 32 characters.</p>
 </li>
 <li>
 <p>To access Prometheus metrics using your external monitoring tool, select <strong>Allow Prometheus</strong>.</p>
 </li>
 <li>
-<p>In the <strong>Certificate type</strong> section, upload or generate the certificate.</p>
-<div class="exampleblock tabbed-block">
-<div class="content">
-<div class="openblock">
-<div class="title">Upload certificate</div>
-<div class="content">
-<div class="paragraph">
-<p>Upload the certificate <code>.pem</code> file.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<p>In the <strong>Certificate type</strong> section, upload the management interface certificate <code>.pem</code> file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>Select <strong>Upload certificate</strong> and then select <strong>Continue</strong>.</p>
 </li>
 <li>
-<p>Upload the client certificate name (<code>.pem</code>).</p>
-<div class="paragraph">
-<p>Select <strong>Client certificate details</strong> to display the certificate metadata and certificate PEM.</p>
-</div>
+<p>Upload the management interface certificate file (<code>.pem</code>).</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Select <strong>Download certificate</strong> to save the certificate file.</p>
-<div class="paragraph">
-<p>Specify the certificate file name and download location. Save the file with the extension <code>.pem</code>.</p>
-</div>
-<div class="paragraph">
-<p>For example: <code>storagegrid_certificate.pem</code></p>
-</div>
+<p>Select <strong>Client certificate details</strong> to display the certificate metadata and certificate PEM.</p>
 </li>
 <li>
 <p>Select <strong>Copy certificate PEM</strong> to copy the certificate contents for pasting elsewhere.</p>
@@ -11346,34 +11354,206 @@ If you are using a key management server (KMS) to protect the data on specially 
 </li>
 </ol>
 </div>
-</div>
-</div>
-<div class="openblock">
-<div class="title">Generate certificate</div>
-<div class="content">
+</li>
+<li>
+<p>Configure the following settings on your external monitoring tool, such as Grafana.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Name</strong>: Enter a name for the connection.</p>
 <div class="paragraph">
-<p>Generate the certificate text to paste elsewhere.</p>
+<p>StorageGRID does not require this information, but you must provide a name to test the connection.</p>
+</div>
+</li>
+<li>
+<p><strong>URL</strong>: Enter the domain name or IP address for the Admin Node. Specify HTTPS and port 9091.</p>
+<div class="paragraph">
+<p>For example: <code>https://admin-node.example.com:9091</code></p>
+</div>
+</li>
+<li>
+<p>Enable <strong>TLS Client Auth</strong> and <strong>With CA Cert</strong>.</p>
+</li>
+<li>
+<p>Under TLS/SSL Auth Details, copy and paste:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The management interface CA certificate to <strong>CA Cert</strong></p>
+</li>
+<li>
+<p>The client certificate to <strong>Client Cert</strong></p>
+</li>
+<li>
+<p>The private key to <strong>Client Key</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>ServerName</strong>: Enter the domain name of the Admin Node.</p>
+<div class="paragraph">
+<p>ServerName must match the domain name as it appears in the management interface certificate.</p>
+</div>
+</li>
+<li>
+<p>Save and test the certificate and private key that you copied from StorageGRID or a local file.</p>
+<div class="paragraph">
+<p>You can now access the Prometheus metrics from StorageGRID with your external monitoring tool.</p>
+</div>
+<div class="paragraph">
+<p>For information about the metrics, see the <a href="../monitor/index.html">instructions for monitoring StorageGRID</a>.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ca-issued-client-certificate">CA issued client certificate</h3>
+<div class="paragraph">
+<p>Use this procedure to add an administrator client certificate if a management interface certificate was not configured and you plan to add a client certificate for Prometheus that uses a CA issued client certificate and private key.</p>
 </div>
 <div class="olist arabic">
+<div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Select <strong>Generate certificate</strong>.</p>
+<p>Perform the steps to <a href="configuring-custom-server-certificate-for-grid-manager-tenant-manager.html">configure a management interface certificate</a>.</p>
+</li>
+<li>
+<p>In the Grid Manager, select <strong>CONFIGURATION</strong> &gt; <strong>Security</strong> &gt; <strong>Certificates</strong> and then select the <strong>Client</strong> tab.</p>
+</li>
+<li>
+<p>Select <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Enter a certificate name that contains at least 1 and no more than 32 characters.</p>
+</li>
+<li>
+<p>To access Prometheus metrics using your external monitoring tool, select <strong>Allow Prometheus</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Certificate type</strong> section, upload the client certificate, private key and CA bundle <code>.pem</code> files:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select <strong>Upload certificate</strong> and then select <strong>Continue</strong>.</p>
+</li>
+<li>
+<p>Upload client certificate, private key and CA bundle files (<code>.pem</code>).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Select <strong>Client certificate details</strong> to display the certificate metadata and certificate PEM.</p>
+</li>
+<li>
+<p>Select <strong>Copy certificate PEM</strong> to copy the certificate contents for pasting elsewhere.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select <strong>Create</strong> to save the certificate in the Grid Manager.</p>
+<div class="paragraph">
+<p>The new certificates appear on the Client tab.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Configure the following settings on your external monitoring tool, such as Grafana.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Name</strong>: Enter a name for the connection.</p>
+<div class="paragraph">
+<p>StorageGRID does not require this information, but you must provide a name to test the connection.</p>
+</div>
+</li>
+<li>
+<p><strong>URL</strong>: Enter the domain name or IP address for the Admin Node. Specify HTTPS and port 9091.</p>
+<div class="paragraph">
+<p>For example: <code>https://admin-node.example.com:9091</code></p>
+</div>
+</li>
+<li>
+<p>Enable <strong>TLS Client Auth</strong> and <strong>With CA Cert</strong>.</p>
+</li>
+<li>
+<p>Under TLS/SSL Auth Details, copy and paste:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The management interface CA certificate to <strong>CA Cert</strong></p>
+</li>
+<li>
+<p>The client certificate to <strong>Client Cert</strong></p>
+</li>
+<li>
+<p>The private key to <strong>Client Key</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>ServerName</strong>: Enter the domain name of the Admin Node.</p>
+<div class="paragraph">
+<p>ServerName must match the domain name as it appears in the management interface certificate.</p>
+</div>
+</li>
+<li>
+<p>Save and test the certificate and private key that you copied from StorageGRID or a local file.</p>
+<div class="paragraph">
+<p>You can now access the Prometheus metrics from StorageGRID with your external monitoring tool.</p>
+</div>
+<div class="paragraph">
+<p>For information about the metrics, see the <a href="../monitor/index.html">instructions for monitoring StorageGRID</a>.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="generated-certificate-from-grid-manager">Generated certificate from Grid Manager</h3>
+<div class="paragraph">
+<p>Use this procedure to add an administrator client certificate if a management interface certificate was not configured and you plan to add a client certificate for Prometheus that uses the generate certificate function in Grid Manager.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the Grid Manager, select <strong>CONFIGURATION</strong> &gt; <strong>Security</strong> &gt; <strong>Certificates</strong> and then select the <strong>Client</strong> tab.</p>
+</li>
+<li>
+<p>Select <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Enter a certificate name that contains at least 1 and no more than 32 characters.</p>
+</li>
+<li>
+<p>To access Prometheus metrics using your external monitoring tool, select <strong>Allow Prometheus</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Certificate type</strong> section, select <strong>Generate certificate</strong>.</p>
 </li>
 <li>
 <p>Specify the certificate information:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Domain name</strong>: One or more fully qualified domain names to include in the certificate. Use an * as a wildcard to represent multiple domain names.</p>
+<p><strong>Domain name</strong>: One or more fully qualified domain names of the admin node to include in the certificate. Use an * as a wildcard to represent multiple domain names.</p>
 </li>
 <li>
-<p><strong>IP</strong>: One or more IP addresses to include in the certificate.</p>
+<p><strong>IP</strong>: One or more admin node IP addresses to include in the certificate.</p>
 </li>
 <li>
 <p><strong>Subject</strong>: X.509 subject or distinguished name (DN) of the certificate owner.</p>
-</li>
-<li>
-<p><strong>Days valid</strong>: Number of days after creation that the certificate expires.</p>
 </li>
 </ul>
 </div>
@@ -11382,7 +11562,7 @@ If you are using a key management server (KMS) to protect the data on specially 
 <p>Select <strong>Generate</strong>.</p>
 </li>
 <li>
-<p>Select <strong>Client certificate details</strong> to display the certificate metadata and certificate PEM.</p>
+<p><a id="client_cert_details"></a> Select <strong>Client certificate details</strong> to display the certificate metadata and certificate PEM.</p>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -11427,23 +11607,36 @@ You will not be able to view the certificate private key after you close the dia
 <p>The new certificate appears on the Client tab.</p>
 </div>
 </li>
+<li>
+<p>In the Grid Manager, select <strong>CONFIGURATION</strong> &gt; <strong>Security</strong> &gt; <strong>Certificates</strong> and then select the <strong>Global</strong> tab.</p>
+</li>
+<li>
+<p>Select <strong>Management Interface certificate</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Use custom certificate</strong>.</p>
+</li>
+<li>
+<p>Upload the certificate.pem and private_key.pem files from the <a href="#client_cert_details">client certificate details</a> step. There is no need to upload CA bundle.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select <strong>Upload certificate</strong> and then select <strong>Continue</strong>.</p>
+</li>
+<li>
+<p>Upload each certificate file (<code>.pem</code>).</p>
+</li>
+<li>
+<p>Select <strong>Create</strong> to save the certificate in the Grid Manager.</p>
+<div class="paragraph">
+<p>The new certificate appears on the Client tab.</p>
+</div>
+</li>
 </ol>
-</div>
-</div>
-</div>
-</div>
 </div>
 </li>
 <li>
 <p>Configure the following settings on your external monitoring tool, such as Grafana.</p>
-<div class="paragraph">
-<p>A Grafana example is shown in the following screenshot:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../media/grafana_add_url_and_auth.png" alt="Grafana - Add URL and Auth">
-</div>
-</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -11462,7 +11655,17 @@ You will not be able to view the certificate private key after you close the dia
 <p>Enable <strong>TLS Client Auth</strong> and <strong>With CA Cert</strong>.</p>
 </li>
 <li>
-<p>Copy and paste the management interface certificate or optional CA bundle to <strong>CA Cert</strong> under TLS/SSL Auth Details.</p>
+<p>Under TLS/SSL Auth Details, copy and paste:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The management interface client certificate to both <strong>CA Cert</strong> and <strong>Client Cert</strong></p>
+</li>
+<li>
+<p>The private key to <strong>Client Key</strong></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>ServerName</strong>: Enter the domain name of the Admin Node.</p>
@@ -11483,6 +11686,7 @@ You will not be able to view the certificate private key after you close the dia
 </div>
 </li>
 </ol>
+</div>
 </div>
 </div>
 </div>
@@ -11508,7 +11712,7 @@ You will not be able to view the certificate private key after you close the dia
 <p>Select <strong>Edit</strong> and then select <strong>Edit name and permission</strong></p>
 </li>
 <li>
-<p>Enter a certificate name between 1 and 32 characters.</p>
+<p>Enter a certificate name that contains at least 1 and no more than 32 characters.</p>
 </li>
 <li>
 <p>To access Prometheus metrics using your external monitoring tool, select <strong>Allow Prometheus</strong>.</p>

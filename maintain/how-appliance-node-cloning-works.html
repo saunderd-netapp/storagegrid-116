@@ -5268,6 +5268,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -8710,9 +8712,9 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/registering-hardware.html">
         Register hardware
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/sg6060-installing-60-drive-shelves-into-cabinet-or-rack.html">
-        SG6060: Install 60-drive shelves into cabinet or rack
+        SG6060 and SG6060X: Install 60-drive shelves into cabinet or rack
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/sg6060-installing-drives.html">
-        SG6060: Install drives
+        SG6060 and SG6060X: Install drives
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/sgf6024-installing-24-drive-shelves-into-cabinet-or-rack.html">
         SGF6024: Install 24-drive shelves into cabinet or rack
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/sg6000-cn-installing-into-cabinet-or-rack.html">
@@ -8720,13 +8722,13 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/cabling-appliance-sg6000.html">
         Cable appliance (SG6000)
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/sg6060-cabling-optional-expansion-shelves.html">
-        SG6060: Cable optional expansion shelves
+        SG6060 and SG6060X: Cable optional expansion shelves
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/connecting-power-cords-and-applying-power-sg6000.html">
         Connect power cords and apply power (SG6000)
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/viewing-status-indicators-and-buttons-on-sg6000-cn-controller.html">
         View status indicators and buttons on SG6000-CN controller
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/viewing-boot-up-status-codes-for-sg6000-storage-controllers.html">
-        View boot-up status codes for SG6000 storage controllers
+        View boot-up status codes for SG6000 and SG6060X storage controllers
       </a></li></ul></li><li class="subfolders "><a href="/us-en/storagegrid-116/sg6000/configuring-hardware.html">
         <div class="na-navbar-padding"> Configure hardware (SG6000)</div>
       </a>
@@ -10067,13 +10069,15 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/tenant/using-identity-federation.html">
         Use identity federation
-      </a></li><li class="subfolders "><a href="/us-en/storagegrid-116/tenant/managing-groups.html">
+      </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Manage groups</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/tenant/creating-groups-for-s3-tenant.html">
         Create groups for S3 tenant
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/tenant/creating-groups-for-swift-tenant.html">
         Create groups for Swift tenant
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/tenant/tenant-management-permissions.html">
+        Tenant management permissions
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/tenant/viewing-and-editing-group-details.html">
         View and edit group details
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/tenant/adding-users-to-local-group.html">
@@ -11177,7 +11181,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-25 14:16:41 +0000">01/25/2022</time>
+    <time datetime="2022-02-02 01:35:00 +0000">02/02/2022</time>
     
   
 
@@ -11291,10 +11295,10 @@
 <li>
 <p>If the number of standard drives installed in a target storage appliance is less than the number of drives in the source node, due to installation of solid-state drives (SSDs), the overall storage capacity of the standard drives in the target appliance (in TB) must meet or exceed the total functional drive capacity of all drives in the source Storage Node.</p>
 <div class="paragraph">
-<p>For example, when cloning an SG5660 source Storage Node appliance with 60 drives to an SG6060 target appliance with 58 standard drives, larger drives should be installed in the SG6060 target appliance before cloning to maintain storage capacity. (The two drive slots containing SSDs in the target appliance are not included in the total appliance-storage capacity.)</p>
+<p>For example, when cloning an SG5660 source Storage Node appliance with 60 drives to an SG6060 or SG6060X target appliance with 58 standard drives, larger drives should be installed in the SG6060 or SG6060X target appliance before cloning to maintain storage capacity. (The two drive slots containing SSDs in the target appliance are not included in the total appliance-storage capacity.)</p>
 </div>
 <div class="paragraph">
-<p>However, if a 60-drive SG5660 source node appliance is configured with SANtricity Dynamic Disk Pools DDP-8, configuring a 58-drive same-size-drive SG6060 target appliance with DDP-16 might make the SG6060 appliance a valid clone target due to its improved storage efficiency.</p>
+<p>However, if a 60-drive SG5660 source node appliance is configured with SANtricity Dynamic Disk Pools DDP-8, configuring a 58-drive same-size-drive SG6060 or SG6060X target appliance with DDP-16 might make the SG6060 or SG6060X appliance a valid clone target due to its improved storage efficiency.</p>
 </div>
 <div class="paragraph">
 <p>You can view information about the current RAID mode of the source appliance node on the <strong>NODES</strong> page in Grid Manager. Select the <strong>Storage</strong> tab for the appliance.</p>
