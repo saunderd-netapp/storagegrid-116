@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">English</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">English</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/storagegrid-116/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/storagegrid-116/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/storagegrid-116/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/storagegrid-116/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/storagegrid-116/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/storagegrid-116/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/us-en/storagegrid-116/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/storagegrid-116/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/storagegrid-116/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/storagegrid-116/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/storagegrid-116/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -8420,7 +8412,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/index.html">
         StorageGRID 11.6 Docs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/release-notes/index.html">
@@ -8678,7 +8670,7 @@
         <div class="na-navbar-padding"> Overview</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/sg6060-overview.html">
-        SG6060 overview
+        SG6060 and SG6060X overview
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/sgf6024-overview.html">
         SGF6024 overview
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/storagegrid-116/sg6000/controllers-in-sg6000-appliances.html">
@@ -11181,7 +11173,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-24 16:25:11 +0000">01/24/2022</time>
+    <time datetime="2022-05-24 19:19:09 +0000">05/24/2022</time>
     
   
 
@@ -11563,7 +11555,7 @@ Repairs of erasure-coded data can begin while some Storage Nodes are offline. Re
 <div class="sect1">
 <h2 id="monitor-repairs">Monitor repairs</h2>
 <div class="sectionbody">
-<div id="monitor-repairs" class="paragraph">
+<div class="paragraph">
 <p>Monitor the status of the repair jobs, based on whether you use <strong>replicated data</strong>, <strong>erasure-coded (EC) data</strong>, or both.</p>
 </div>
 <div class="exampleblock tabbed-block">
@@ -11860,4 +11852,5 @@ The <code>show-replicated-repair-status</code> option is available for technical
     </script>
     <script src='/us-en/storagegrid-116/js/www-ntap.js'></script>
     <script src='/us-en/storagegrid-116/js/tabbed-blocks.js'></script>
+    <script src='/us-en/storagegrid-116/js/sidebar.js'></script>
   </body></html>
